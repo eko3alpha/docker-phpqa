@@ -1,5 +1,5 @@
 # docker-phpqa
-Docker image for running PHP QA Tools - https://github.com/EdgedesignCZ/phpqa
+Docker image for running [PHP QA Tools](https://github.com/EdgedesignCZ/phpqa)
 
 # Example
 
@@ -7,7 +7,7 @@ Docker image for running PHP QA Tools - https://github.com/EdgedesignCZ/phpqa
 
 # Alias
 
-You can also create an alias so you dont have to type that whole command! More information can be found here: http://ctankersley.com/2015/12/23/dockerize-commands/
+You can also create an alias so you dont have to type that whole command! More information can be found here: [Dockerize Commands](http://ctankersley.com/2015/12/23/dockerize-commands/)
 
     sudo pico ~/.bash_profile
     
@@ -23,7 +23,7 @@ Now you can use phpqa tools anywhere!  Make sure you are in the root directory o
 
     phpqa --report
     
-For full documentation please head over to: https://github.com/EdgedesignCZ/phpqa
+For full documentation please head over to [PHPQA Docs](https://github.com/EdgedesignCZ/phpqa)
 
 ## Analyze
 
