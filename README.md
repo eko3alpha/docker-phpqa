@@ -23,7 +23,7 @@ Now you can use phpqa tools anywhere!  Make sure you are in the root directory o
 
     phpqa --report
     
-For full documentation please head over to [PHPQA Docs](https://github.com/EdgedesignCZ/phpqa)
+For full documentation please head over to [PHP QA Docs](https://github.com/EdgedesignCZ/phpqa)
 
 ## Analyze
 
