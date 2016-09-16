@@ -7,7 +7,7 @@ Docker image for running PHP QA Tools - https://github.com/EdgedesignCZ/phpqa
 
 # Alias
 
-You can also create an alias so you dont have to type that whole command!
+You can also create an alias so you dont have to type that whole command! More information can be found here: http://ctankersley.com/2015/12/23/dockerize-commands/
 
     sudo pico ~/.bash_profile
     
