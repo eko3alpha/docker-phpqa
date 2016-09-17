@@ -54,3 +54,38 @@ pdepend | [pdepend-jdepend.xml](https://edgedesigncz.github.io/phpqa/report/pdep
 phpmd | [phpmd.xml](https://edgedesigncz.github.io/phpqa/report/phpmd.xml) | [✓](https://github.com/phpmd/phpmd/blob/master/src/main/php/PHPMD/Renderer/TextRenderer.php#L47) |
 phpmetrics | [phpmetrics.html](https://edgedesigncz.github.io/phpqa/report/phpmetrics.html), [phpmetrics.xml](https://edgedesigncz.github.io/phpqa/report/phpmetrics.xml) | [✓](https://github.com/phpmetrics/PhpMetrics#usage) |
 
+# PHP Mess Detector
+If you want to change the rules for PHPMD first go [here](https://edorian.github.io/php-coding-standard-generator/#phpmd) and generate your own rules.  Below is a sample output
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <ruleset name="pcsg-generated-ruleset" 
+        xmlns="http://pmd.sf.net/ruleset/1.0.0" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd"
+        xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd">
+    <description>Created with the PHP Coding Standard Generator. http://edorian.github.com/php-coding-standard-generator/
+    </description>
+    <rule ref="rulesets/controversial.xml/Superglobals"/>
+    <rule ref="rulesets/design.xml/ExitExpression"/>
+    <rule ref="rulesets/design.xml/EvalExpression"/>
+    <rule ref="rulesets/design.xml/GotoStatement"/>
+    <rule ref="rulesets/naming.xml"/>
+    <rule ref="rulesets/unusedcode.xml"/>
+    </ruleset>
+
+Once you create your own rule set, copy and paste the XML into a file.  In this example we're naming the file 
+
+    phpmd.rules.xml
+
+PHPQA will search for a YML file named [.phpqa.yml](https://github.com/EdgedesignCZ/phpqa/blob/master/.phpqa.yml) in the directory you to run this docker file from.  In this YML file there is a section for phpmd
+
+    phpmd:
+        standard: phpmd.rules.xml
+
+Make sure the location of the xml file (phpmd.rules.xml) is relative to .phpqa.yml.  Save and run the docker file.
+
+    docker run --rm -u $UID -v $PWD:/app eko3alpha/docker-phpqa --report --tools phpmd --verbose
+
+or if you created an alias
+
+    phpqa --report --tools phpmd --verbose
