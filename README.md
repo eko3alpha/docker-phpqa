@@ -19,7 +19,7 @@ Ubuntu:
 
 Then add the following entry, in this case we're calling it "phpqa" you can change it to whatever you want.  Make sure to wrap it in single quotes.
     
-    alias phpqa='docker run --rm -u $UID -v $PWD:/app eko3alpha/docker-phpqa'
+    alias phpqa='echo "$PWD";docker run --rm -u "$UID" -v "$PWD:/app" eko3alpha/docker-phpqa'
     
 After you add the entry refresh the profile
 
