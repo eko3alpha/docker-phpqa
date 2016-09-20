@@ -9,11 +9,17 @@ Docker image for running [PHP QA Tools](https://github.com/EdgedesignCZ/phpqa)
 
 You can also create an alias so you dont have to type that whole command! More information can be found here: [Dockerize Commands](http://ctankersley.com/2015/12/23/dockerize-commands/)
 
+OSX:
+
     sudo pico ~/.bash_profile
     
+Ubuntu:
+
+    sudo pico ~/.bash_aliases
+
 Then add the following entry, in this case we're calling it "phpqa" you can change it to whatever you want.  Make sure to wrap it in single quotes.
     
-    alias phpqa='docker run --rm -u $UID -v $PWD:/app eko3alpha/docker-phpqa'
+    alias phpqa='docker run --rm -u $UID -v $(PWD):/app eko3alpha/docker-phpqa'
     
 After you add the entry refresh the profile
 
