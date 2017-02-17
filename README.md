@@ -3,7 +3,7 @@ Docker image for running [PHP QA Tools](https://github.com/EdgedesignCZ/phpqa)
 
 # Example
 
-    docker run --rm -u $UID -v $PWD:/app eko3alpha/docker-phpqa --report --ignoreDirs vendor,build,migrations,test
+    docker run --rm -u $UID -v $PWD:/app eko3alpha/docker-phpqa --report --ignoredDirs vendor,build,migrations,test
 
 # Alias
 
