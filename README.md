@@ -1,3 +1,4 @@
+
 # docker-phpqa
 Docker image for running [PHP QA Tools](https://github.com/EdgedesignCZ/phpqa)
 
@@ -7,9 +8,15 @@ Docker image for running [PHP QA Tools](https://github.com/EdgedesignCZ/phpqa)
 
 Here is a breakdown of the docker command
 
---rm : Cleans up any unused docker images used to create the image
--u $UID : Passes docker your existing user id so the new files will have your ownership
--v $PWD : Passes docker the existing working directory for analyzing
+**--rm** : Cleans up any unused docker images used to create the image
+
+**-u $UID** : Passes docker your existing user id so the new files will have your ownership
+
+-**v $PWD** : Passes docker the existing working directory for analyzing
+
+**--report** : Tells PHPQA to output HTML reports
+
+**--ignoredDirs** :  Directories to ignore, you can add your own
 
 # Alias
 
