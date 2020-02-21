@@ -5,6 +5,12 @@ Docker image for running [PHP QA Tools](https://github.com/EdgedesignCZ/phpqa)
 
     docker run --rm -u $UID -v $PWD:/app eko3alpha/docker-phpqa --report --ignoredDirs vendor,build,migrations,test
 
+Here is a breakdown of the docker command
+
+--rm : Cleans up any unused docker images used to create the image
+-u $UID : Passes docker your existing user id so the new files will have your ownership
+-v $PWD : Passes docker the existing working directory for analyzing
+
 # Alias
 
 You can also create an alias so you dont have to type that whole command! More information can be found here: [Dockerize Commands](http://ctankersley.com/2015/12/23/dockerize-commands/)
@@ -12,23 +18,23 @@ You can also create an alias so you dont have to type that whole command! More i
 OSX:
 
     sudo pico ~/.bash_profile
-    
+
 Ubuntu:
 
     sudo pico ~/.bash_aliases
 
 Then add the following entry, in this case we're calling it "phpqa" you can change it to whatever you want.  Make sure to wrap it in single quotes.
-    
+
     alias phpqa='docker run --rm -u "$UID" -v "$PWD:/app" eko3alpha/docker-phpqa'
-    
+
 After you add the entry refresh the profile
 
     source ~/.bash_profile
-    
+
 Now you can use phpqa tools anywhere!  Make sure you are in the root directory of your project and then run
 
     phpqa --report
-    
+
 For full documentation please head over to [PHP QA Docs](https://github.com/EdgedesignCZ/phpqa)
 
 ## Analyze
@@ -65,7 +71,7 @@ php-cs-fixer | [php-cs-fixer.html](https://edgedesigncz.github.io/phpqa/report/p
 parallel-lint | [parallel-lint.html](https://edgedesigncz.github.io/phpqa/report/parallel-lint.html) | [✓](https://github.com/JakubOnderka/PHP-Parallel-Lint#example-output) |
 phpstan | [phpstan.html](https://edgedesigncz.github.io/phpqa/report/phpstan.html), [phpstan-phpqa.neon](https://edgedesigncz.github.io/phpqa/report/phpstan-phpqa.neon) | [✓](https://edgedesigncz.github.io/phpqa/report/phpstan.html), [phpstan-phpqa.neon](https://edgedesigncz.github.io/phpqa/report/phpstan-phpqa.neon "Generated configuration is saved in current working directory") |
 
-##### Additional tools 
+##### Additional tools
 
 The following tools are preinstalled. phpstan is experimental and will need to be manually specified in `--tools`.
 
@@ -79,9 +85,9 @@ Tool | PHP | Supported since | Description | Status |
 If you want to change the rules for PHPMD first go [here](https://edorian.github.io/php-coding-standard-generator/#phpmd) and generate your own rules.  Below is a sample output
 
     <?xml version="1.0" encoding="UTF-8"?>
-    <ruleset name="pcsg-generated-ruleset" 
-        xmlns="http://pmd.sf.net/ruleset/1.0.0" 
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    <ruleset name="pcsg-generated-ruleset"
+        xmlns="http://pmd.sf.net/ruleset/1.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd"
         xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd">
     <description>Created with the PHP Coding Standard Generator. http://edorian.github.com/php-coding-standard-generator/
@@ -94,7 +100,7 @@ If you want to change the rules for PHPMD first go [here](https://edorian.github
     <rule ref="rulesets/unusedcode.xml"/>
     </ruleset>
 
-Once you create your own rule set, copy and paste the XML into a file.  In this example we're naming the file 
+Once you create your own rule set, copy and paste the XML into a file.  In this example we're naming the file
 
     phpmd.rules.xml
 
