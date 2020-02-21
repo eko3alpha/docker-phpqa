@@ -1,6 +1,6 @@
 
 # docker-phpqa
-Docker image for running [PHP QA Tools](https://github.com/EdgedesignCZ/phpqa)
+Docker image for running [PHP QA Tools](https://edgedesigncz.github.io/phpqa/)
 
 # Example
 
